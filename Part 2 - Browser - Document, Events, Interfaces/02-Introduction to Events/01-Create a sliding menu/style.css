@@ -1,0 +1,18 @@
+.menu ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+}
+
+.menu .title::before {
+    content: '▶ ';
+}
+
+.menu.open .title::before {
+    content: '▼ ';
+}
+
+.menu.open ul {
+    display: block;
+}

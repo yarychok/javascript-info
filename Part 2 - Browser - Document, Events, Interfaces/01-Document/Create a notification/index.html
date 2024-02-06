@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Create a notification</title>
+</head>
+<body>
+
+    <h1>Notification is on the right</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquam tempore nihil natus tenetur officiis dolore vitae ex animi totam eum reprehenderit praesentium et neque voluptatem dolorem explicabo, quasi necessitatibus.
+    </p>
+
+    <script>
+        function showNotification({top = 0, right = 0, className, html}) {
+
+            let notification = document.createElement('div');
+
+            notification.className = "notification";
+
+            if (className) { 
+                notification.classList.add(className);
+            }
+
+            notification.style.top = top + 'px';
+            notification.style.right = right + 'px';
+
+            notification.innerHTML = html;
+            document.body.append(notification);
+
+            setTimeout(() => notification.remove(), 5000);
+        }
+
+        // let's test it
+        let i = 1;
+        setInterval(() => {
+            showNotification({
+                top: 10,
+                right: 10,
+                className: "welcome",
+                html: "Hello" + i++,
+            });
+        }, 5000);
+    </script>
+</body>
+</html>

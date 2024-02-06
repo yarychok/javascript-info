@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Animals</li>
+        <ul>
+            <li>Mammals</li>
+            <ul>
+                <li>Cows</li>
+                <li>Donkeys</li>
+                <li>Dogs</li>
+                <li>Tigers</li>
+            </ul>
+            <li>Other</li>
+            <ul>
+                <li>Snakes</li>
+                <li>Birds</li>
+                <li>Lizards</li>
+            </ul>
+        </ul>
+        <li>Fishes</li>
+        <ul>
+            <li>Aquarium</li>
+            <ul>
+                <li>Guppy</li>
+                <li>Anglefish</li>
+            </ul>
+            <li>Sea</li>
+            <ul>
+                <li>Sea trout</li>
+            </ul>
+        </ul>
+    </ul>
+
+    <script>
+        let lis = document.querySelectorAll('li');
+        for (let li of lis) console.log(li.textContent);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .selected {
+            background: black;
+            color: white;
+        }
+
+        li {
+            cursor: pointer;
+            list-style-type: none;
+        }
+
+    </style>
+    <title>Selectable list</title>
+</head>
+<body>
+    Kind of file-manager selectable items:<br>
+    <ul id="ul">
+        <li>James Hetfield</li>
+        <li>Lars Ulrich</li>
+        <li>Kirk Hammet</li>
+        <li>Roberto Trujillo</li>
+    </ul>
+
+
+    <script>
+
+        ul.onclick = function(event) {
+            if (event.target.tagName != "LI") return ;
+
+            if (event.ctrlKey || event.metaKey) {
+                toggleSelect(event.target);
+            } else {
+                singleSelect(event.target);
+            }
+        }
+
+        ul.onmousedown = function() {
+            return false;
+        }
+
+        function toggleSelect(li) {
+            li.classList.toggle('selected');
+        }
+
+        function singleSelect(li) {
+            let selected = ul.querySelectorAll('.selected');
+
+            for (let element of selected) {
+                element.classList.remove('selected');
+            }
+            
+            li.classList.add('selected');
+        }
+        // const ul = document.getElementById('ul');
+
+        // ul.addEventListener('mousedown', function(event) {
+
+        //     if (event.target.closest('li')) return;
+
+        //     if (!event.ctrlKey || !event.metaKey) {
+        //         ul.querySelectorAll('li').forEach(element => 
+        //             element.classList.contains('selected') ? element.classList.remove('selected') :element.classList.add('selected'));
+        //     }
+
+        //     event.target.classList.add('selected');
+        // });
+
+        // ul.addEventListener('mousedown', function(event) {
+        //     event.preventDefault();
+        // }); 
+
+    </script>
+</body>
+</html>
